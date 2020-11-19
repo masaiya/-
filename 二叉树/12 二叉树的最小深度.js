@@ -51,18 +51,25 @@ tree.insert(3);
 tree.insert(10);
 tree.insert(22);
 tree.insert(1);
-tree.insert(2);
+// tree.insert(2); 
 tree.insert(99);
+/**
+ *      3
+ *  1      10
+ *    2       22
+ *               99
+ */
 function minDeep(root) {
   if(!root) {
     return 0;
-  }else if(!root.left) {
-    return 1 + minDeep(root.right);
-  }else if(!root.right) {
-    return 1 + minDeep(root.left);
-  } else {
-    return Math.min(minDeep(root.left), minDeep(root.right)) + 1;
   }
+  if(!root.left) {
+    return 1 + minDeep(root.right);
+  }
+  if(!root.right) {
+    return 1 + minDeep(root.left);
+  }
+  return Math.min(minDeep(root.left), minDeep(root.right)) + 1;
 }
 
 var res = minDeep(tree.root);
