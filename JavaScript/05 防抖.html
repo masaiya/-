@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <input type="text" id="search" onkeyup="keyup()"> -->
+  <input type="text" id="search" onkeyup="debounce(keyup, 2000)">
+  <script>
+    function debounce(event, time) {
+      let timer = null;
+      return () => {
+        if(timer) {
+          clearTimeout(timer);
+        }
+        setTimeout(event, time);
+      }
+    }
+    function keyup() {
+      var search = document.getElementById('search');
+      console.log(search.value);
+    }
+  </script>
+</body>
+</html>
