@@ -42,5 +42,6 @@ var currying = function(fn, ...args1) {
     }
   }
 }
-var res = currying(_add)(1,2)(3,4);
+var res = currying(_add)(1,2)(3,4)(100)(1000);
 console.log(res());
+
