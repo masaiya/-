@@ -1,38 +1,32 @@
-function quickSort(arr) {
-  return quick(0, arr.length - 1, arr);
+var quickSort = function(array) {
+  return quick(array, 0, array.length - 1);
 }
-function quick(left, right, arr) {
-  var i = left + 1;
-  var j = right;
-  var base = arr[left];
-  if(arr.length <= 1) return;
-  if(left >= right) return;
+
+var quick = function(array, start, end) {
+  var base = array[start];
+  var i = start + 1;
+  var j = end;
+  if(end - start < 1) return ;
   while(i < j) {
-    while(i < j && arr[j] >= base)  j--;
-    while(i < j && arr[i] < base)  i++;
+    while(array[j] >= base && i < j) {
+      j--;
+    }
+    while(array[i] < base && i < j) {
+      i++;
+    } 
     if(i < j) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      [array[i], array[j]] = [array[j], array[i]];
     }
   }
-  arr[left] = arr[i];
-  arr[i] = base;
-  // var leftArr = arr.slice(left, i);
-  // var rightArr = arr.slice(i+1, right);
-  leftArr = quick(left, i-1, leftArr);
-  rightArr = quick(i+1, right, rightArr);
-  return arr;
+  array[start] = array[i];
+  array[i] = base;
+  quick(array, start, i-1);
+  quick(array, i+1, end);
+  return array;
 }
-/**
- * left              right
- * 0  1  2  3  4  5  6
- * 49 38 65 97 13 27 49
- * b     i        j
- * 49 38 27 97 13 65 49
- * b        i  j  
- * 49 38 27 13 97 65 49
- * b        ij  
- * 13 38 27 49 97 65 49
- * b        ij  
- */
-var arr = [49, 38, 65, 97, 13, 27, 49];
-console.log(quickSort(arr));
+
+// 5, 1, 2, 3, 4, 9, 8, 7, 6
+// 4, 1, 2, 3, 5, 9, 8, 7, 6
+var array = [5,6,7,8,9,4,3,1,2];
+var res = quickSort(array);
+console.log(res);

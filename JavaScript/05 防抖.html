@@ -6,7 +6,6 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- <input type="text" id="search" onkeyup="keyup()"> -->
   <input type="text" id="search" onkeyup="debounce(keyup, 2000)">
   <script>
     function debounce(event, time) {
@@ -15,12 +14,12 @@
         if(timer) {
           clearTimeout(timer);
         }
-        setTimeout(event, time);
+        setTimeout(event(), time);
       }
     }
     function keyup() {
       var search = document.getElementById('search');
-      console.log(search.value);
+      console.log("input的值为：" + search.value);
     }
   </script>
 </body>
