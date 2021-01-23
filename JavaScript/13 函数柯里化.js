@@ -9,7 +9,6 @@ var hasLetter = curryingCheck(/[a-z]+/g);
 // console.log(hasNumber('test1'));  // true
 // console.log(hasLetter('22111'));  // false
 
-
 // add柯里化函数封装
 function _add(...args) {
   var res = args.reduce((sum, i) => sum + i);

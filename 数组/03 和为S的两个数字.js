@@ -16,11 +16,20 @@ function FindNumbersWithSum(array, sum) {
   }
   return null;
 }
-/** 0, 1, 2, 3, 4, 6, 10, 11, 13
- *  l                      r
- */
+function FindNumbersWithSum(arr, sum) {
+  if(arr && arr.length > 1) {
+    var left = 0, right = arr.length - 1;
+    while(left < right) {
+      var num = arr[left] + arr[right];
+      if(num == sum) return [arr[left], arr[right]];
+      else if(num < sum) left ++;
+      else right --;
+    }
+    return null;
+  }
+}
 var array = [0, 1, 2, 3, 4, 6, 10, 11, 13];
-var S = 6;
+var S = 15;
 
 var res = FindNumbersWithSum(array, S);
 console.log(res);

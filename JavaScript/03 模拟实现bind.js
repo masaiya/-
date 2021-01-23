@@ -7,13 +7,14 @@ Function.prototype.myBind = function(context,...args) {
   context = context || window;
   return function F() {
     if(this instanceof F) {
+      console.log("11111");
       return new _this(context,...args);
     }
     return _this.call(context, ...args);
   }
 }
 var eatFish = function(age, gender) {
-  console.log("吃鱼");
+  console.log("吃鱼"); 
   console.log("this的指向=>");
   console.log(this.name);
   console.log(age);

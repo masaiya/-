@@ -98,3 +98,35 @@ console.log(man2); // Man { name: 'bbb', color: 'black', type: 'female', a: { a:
 man2.eat('man2'); // 吃东西啦~ man2
 console.log(man2.hello);
 
+console.log('-------------------------');
+
+// ES6 extends继承
+class Father {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.money = 10000;
+  }
+  toString() {
+    return "name: " + this.name + " age: " + this.age;
+  }
+  static mySay() {
+    console.log("i am father!");
+  }
+}
+class Son extends Father {
+  constructor(name, age, love) {
+    super(name, age);
+    this.love = love;
+  }
+  toString() {
+    return super.toString() + " love: " + this.love;
+  }
+  getMoney() {
+    console.log(this.money);
+  }
+}
+var son = new Son('pipi', 18, 'mmm');
+var res = son.toString();
+console.log(res);
+son.getMoney();

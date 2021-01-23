@@ -2,12 +2,12 @@ function binarySearch(arr, data) {
   var start = 0, end = arr.length - 1;
   var mid;
   while(start <= end) {
-    mid = Math.floor((start+end) / 2);
-    if(arr[mid] == data) {
+    mid = Math.floor((start + end) / 2);
+    if(arr[mid] === data) {
       return mid;
-    } else if(arr[mid] > data) {
+    }else if(arr[mid] > data) {
       end = mid - 1;
-    } else{
+    }else {
       start = mid + 1;
     }
   }

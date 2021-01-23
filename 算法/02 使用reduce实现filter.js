@@ -2,13 +2,14 @@
 var arr = [1,2,3,4,5,6];
 
 var res = arr.filter(function(item) {
-  // this();
+  this();
   return item > 3;
 }, function() {
   console.log("111");
 });
-// console.log(res);
+console.log(res);
 
+console.log("-------------");
 
 Array.prototype.myFilter = function(fn, callback) {
   var result = [];

@@ -1,6 +1,4 @@
 // 只复制第一层的浅拷贝
-
-
 // 1. 通过遍历实现
 function simpleCopy(obj1) {
   var obj2 = Array.isArray(obj1) ? [] : {};
