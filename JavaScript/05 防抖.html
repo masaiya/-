@@ -6,15 +6,17 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="text" id="search" onkeyup="debounce(keyup, 2000)">
+  <input type="text" id="search">
   <script>
-    function debounce(event, time) {
-      let timer = null;
+    var search = document.getElementById('search');
+    search.onkeyup = debounce(keyup, 1000);
+    function debounce(fn, time) {
       return () => {
         if(timer) {
           clearTimeout(timer);
+        } else {
+          var timer = setTimeout(fn, time);
         }
-        setTimeout(event(), time);
       }
     }
     function keyup() {

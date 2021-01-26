@@ -1,34 +1,35 @@
-// 手动实现数组扁平化
-// var flatArray = function(arr) {
-//   var result = [];
-//   for(let i of arr) {
-//     if(Array.isArray(i)) {
-//       result = result.concat(flatArray(i));
-//     } else {
-//       result.push(i);
-//     }
-//   }
-//   return result;
-// }
-var flatArray = function(arr) {
-  var result = [];
-  for(let i of arr) {
-    if(Array.isArray(i)) {
-      result = result.concat(flatArray(i));
-    } else {
-      result.push(i);
-    }
-  }
-  return result;
+setTimeout(() => {
+	console.log('setTimeout')
+}, 0)
+console.log('t1') //
+fetch('http://dict.qq.com')
+ .then(function(response) {
+   return response.json();
+ })
+ .then(function(myJson) {
+   console.log('myJson');
+ })
+ .catch(function(err) {
+ 	console.log(err)
+ })
+console.log('fetch zhi hou')
+async function async1() {
+	console.log('async1 start')
+	await async2()
+	console.log('async1 end')
 }
-var flatten = function(arr) {
-  return arr.reduce((prev, curr) => {
-    if(Array.isArray(curr)) prev = prev.concat(flatten(curr));
-    else prev.push(curr);
-    return prev;
-  }, [])
+async1()
+console.log('t2')
+new Promise((resolve) => {
+	console.log('promise')
+	resolve()
+}).then(() => {
+	console.log('promise.then')
+})
+console.log('t3')
+async function async2() {
+	console.log('async2')
 }
+console.log('t4')
 
-var arr = [1,2,[3,4,[5,6]]];
-var result = flatten(arr);
-console.log(result);
+// t1
