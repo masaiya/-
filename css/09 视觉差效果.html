@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>背景图视觉差效果</title>
+		<style type="text/css">
+			html,
+			body {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.main {
+				width: 100%;
+				height: auto;
+			}
+			
+			.description {
+				width: 100%;
+				text-align: center;
+			}
+			.bg0 {
+				width: 100%;
+				height: 500px;
+				background: url(img/about_us_title_bg.jpg);
+				background-size: cover;
+			}
+			.bg1 {
+				width: 100%;
+				height: 500px;
+				background: url(img/about_us_title_bg.jpg);
+				background-attachment: fixed;
+				background-size: cover;
+			}
+			
+			.bgh1 {
+				color: #FFFFFF;
+				padding: 150px 50px;
+				font-size: 3em;
+				margin: 0px;
+			}
+			
+			.section-wrap {
+				position: relative;
+				width: 100%;
+				height: 500px;
+			}
+			
+			.parallax {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url(./night.jpg);
+				background-size: cover;
+				background-attachment: fixed;
+				background-position: top center;
+				z-index: -1;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="bg0">
+				<h1 class="bgh1">We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind.</h1>
+			</div>
+			<div class="description">
+				<h1>慢慢滑动</h1>
+				<h1>慢慢滑动</h1>
+				<h1>慢慢滑动</h1>
+				<h1>慢慢滑动</h1>
+				<h1>慢慢滑动</h1>
+				<h1>慢慢滑动</h1>
+				<h1>慢慢滑动</h1>
+				<h1>慢慢滑动</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+			</div>
+			<div class="bg1">
+				<h1 class="bgh1">We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind.</h1>
+			</div>
+			<div class="description">
+				<h1>再慢慢滑</h1>
+				<h1>再慢慢滑</h1>
+				<h1>再慢慢滑</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+				<h1>注意观察背景图，图有没有在动？</h1>
+			</div>
+
+			<section class="section-wrap">
+				<div class="container">
+					<h1 class="bgh1"> It's not just about ideas.It's about making ideas happen</h1>
+				</div>
+				<!--把这里的0.3改成0.5/0.8/1试一下效果-->
+				<div class="parallax" data-stellar-background-ratio="0.3"></div>
+			</section>
+			<div class="description">
+				<h1>上下反复滚动几次</h1>
+				<h1>上下反复滚动几次</h1>
+				<h1>上下反复滚动几次</h1>
+				<h1>上下反复滚动几次</h1>
+				<h1>看出奥妙了吗</h1>
+				<h1>看出奥妙了吗</h1>
+				<h1>看出奥妙了吗</h1>
+				<h1>看出奥妙了吗</h1>
+			</div>
+		</div>
+		<!-- jQuery Scripts -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript">
+			/* Parallax------------------------------------*/
+			$.stellar({
+				horizontalScrolling: false,
+				hideDistantElements: false
+			});
+
+			$(window).load(function() {
+
+				setTimeout(function() {
+					$.stellar('refresh');
+				}, 1000);
+
+			});
+		</script>
+	</body>
+
+</html>
